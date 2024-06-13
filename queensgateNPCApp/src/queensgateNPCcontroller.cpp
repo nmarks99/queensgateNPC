@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string>
 #include <sstream>
+#include <locale>
 
 #include <epicsExport.h>
 #include <iocsh.h>
@@ -347,7 +348,8 @@ DllAdapterStatus QgateController::moveCmd(std::string cmd, int axisNum, double v
     DllAdapterStatus result = DLL_ADAPTER_STATUS_ERROR_UNKNOWN_COMMAND;
     QGList listresName, listresVal;
     std::ostringstream stageCmd;    //Used for composing full command
-   
+    stageCmd.imbue(std::locale::classic()); // if locale is wrong, could insert commas into big number which is bad
+
     //Compose move command for controller
     stageCmd << cmd << " " << axisNum << " " << std::fixed << value;
 

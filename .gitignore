@@ -11,3 +11,4 @@ O.*
 doxygen
 tags
 iocs
+*.local
