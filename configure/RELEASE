@@ -3,6 +3,11 @@
 # Run "gnumake clean uninstall install" in the application
 # top directory each time this file is changed.
 
+# Correct paths to motor, asyn, and EPICS base if needed
+MOTOR = /APSshare/epics/synApps_6_3/support/motor-R7-3-1
+ASYN = /APSshare/epics/synApps_6_3/support/asyn-R4-44-2
+EPICS_BASE = /APSshare/epics/base-7.0.8
+
 -include $(TOP)/../configure/RELEASE_LIBS_INCLUDE
 -include $(TOP)/RELEASE.local
 -include $(TOP)/configure/RELEASE.local

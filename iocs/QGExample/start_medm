@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+MOTOR="/APSshare/epics/synApps_6_3/support/motor-R7-3-1"
+
+if [ -z "$EPICS_DISPLAY_PATH" ]; then
+    export EPICS_DISPLAY_PATH="${MOTOR}/motorApp/op/adl"
+else
+    export EPICS_DISPLAY_PATH="${MOTOR_ADL_DIR}/motorApp/op/adl:${EPICS_DISPLAY_PATH}"
+fi
+
+medm -macro "P=QGExample:,M1=m1,M2=m2,M3=m3,M4=m4,M5=m5,M6=m6,M7=m7,M8=m8" -x topMotors8.adl &

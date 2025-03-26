@@ -10,5 +10,4 @@ lib
 O.*
 doxygen
 tags
-iocs
 *.local

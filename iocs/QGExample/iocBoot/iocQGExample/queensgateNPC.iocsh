@@ -1,0 +1,16 @@
+### Queensgate NPC Piezo controller
+# qgateCtrlConfig(port,
+# 	IP addr or serial port,
+# 	num axes,
+# 	moving poll period,
+# 	idle poll period,
+# 	path to controller_interface64.so
+# )
+qgateCtrlConfig("QGATE", "127.0.0.1", 2, 0.002, 0.01, "$(QGNPC)/queensgateNPCApp/src/qglib/controller_interface64.so")
+
+# Create motor axis objects
+qgateAxisConfig("QGATE", 1, "M1", 0, 0)
+qgateAxisConfig("QGATE", 2, "M2", 1, 1)
+
+# load motor records
+dbLoadTemplate("queensgateNPC.substitutions", "P=$(PREFIX)")
