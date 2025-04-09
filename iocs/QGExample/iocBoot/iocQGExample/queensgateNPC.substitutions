@@ -3,5 +3,5 @@ file "$(MOTOR)/db/asyn_motor.db"
 pattern
 {N,        M,        DTYP,   PORT,   ADDR,  DESC,              EGU,   DIR,  VMAX,  VELO,  VBAS,  ACCL,  BDST,   BVEL,  BACC,    MRES,  PREC,  RTRY,  DHLM,   DLLM, INIT}
 {1,  "m$(N)", "asynMotor",  QGATE,      0,  "Queensgate CH1",   um,   Pos,   15.,   3.0,  0.05,   0.5,     0,    1.0,     2,     1e-6,     5,    0,     0,      0,   ""}
-{2, "m$(N)", "asynMotor",  QGATE,      1,  "Queensgate CH2",   um,   Pos,   15.,   3.0,  0.05,   0.5,     0,    1.0,     2,     1e-6,     5,    0,     0,      0,   ""}
+{2,  "m$(N)", "asynMotor",  QGATE,      1,  "Queensgate CH2",   um,   Pos,   15.,   3.0,  0.05,   0.5,     0,    1.0,     2,     1e-6,     5,    0,     0,      0,   ""}
 }

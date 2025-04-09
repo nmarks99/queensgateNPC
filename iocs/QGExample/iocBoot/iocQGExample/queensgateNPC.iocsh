@@ -1,5 +1,6 @@
 ### Queensgate NPC Piezo controller
-# qgateCtrlConfig(port,
+# qgateCtrlConfig(
+# 	port,
 # 	IP addr or serial port,
 # 	num axes,
 # 	moving poll period,
@@ -9,8 +10,21 @@
 qgateCtrlConfig("QGATE", "127.0.0.1", 2, 0.002, 0.01, "$(QGNPC)/queensgateNPCApp/src/qglib/controller_interface64.so")
 
 # Create motor axis objects
-qgateAxisConfig("QGATE", 1, "M1", 0, 0)
-qgateAxisConfig("QGATE", 2, "M2", 1, 1)
+# qgateAxisConfig(
+# 	port,
+# 	Axis stage number [1..n],
+#	Mode [0..4] (default 0),
+# 	Type [0..1] (default 0),
+# )
+# AXISMODE_NATIVE = 0,    //moving when not in position and not HV saturated
+# AXISMODE_UNCONFIRMED = 1,
+# AXISMODE_WINDOW = 2,    //In position by margin
+# AXISMODE_LPF = 3,       //Low-pass filter (not oscillating)
+# AXISMODE_BOTH = 4       //Confirmed by both Window and Low-pass filter
+# AXISTYPE_STAGE = 0,
+# AXISTYPE_SENSOR = 1
+qgateAxisConfig("QGATE", 1, "M1")
+qgateAxisConfig("QGATE", 2, "M2")
 
 # load motor records
 dbLoadTemplate("queensgateNPC.substitutions", "P=$(PREFIX)")
